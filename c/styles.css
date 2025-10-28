@@ -6,7 +6,7 @@ html {
 }
 body {
   font-size: 2rem;
-  line-height: 1;
+  line-height: 1.5;
   font-family: 'Courier New', Courier, monospace;
   color: #333;
   -webkit-font-smoothing: antialiased;
@@ -28,5 +28,5 @@ h3 { font-size: 2rem; }
   background-position: left top;
   max-width: 65ch; 
   margin: 0 auto;
-  display: flow-root;
+
 }
