@@ -5,8 +5,8 @@ html {
   box-sizing: border-box;
 }
 body {
-  font-size: 1.75rem;
-  line-height: 1.75;
+  font-size: 2rem;
+  line-height: 1;
   font-family: 'Courier New', Courier, monospace;
   color: #333;
   -webkit-font-smoothing: antialiased;
@@ -16,11 +16,17 @@ body {
 
 h1, h2, h3, h4, h5 {
   font-family: Georgia, serif;
+  margin-block-start: 1rem;
+  margin-block-end: 1rem;
 }
+h1 { font-size: 4rem; }
+h2 { font-size: 3rem; }
+h3 { font-size: 2rem; }
 
 .center {
   background-image: url(../i/bg-grid.png);
   background-position: left top;
-  max-width: 60ch; 
-  margin: 0 auto; 
+  max-width: 65ch; 
+  margin: 0 auto;
+  display: flow-root;
 }
