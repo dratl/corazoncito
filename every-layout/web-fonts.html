@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Safe Fonts</title>
+    <style>
+
+        /* Generales*/
+        :root {
+            font-size: 1.1rem;
+            --space: 1rem;
+        }
+        * { 
+            box-sizing: border-box;
+        }
+        main {
+            max-inline-size: 60ch;
+            margin-inline: auto;
+        }
+
+        /* Fuentes */
+        .arial {
+            font-family: Arial, sans-serif;
+        }
+        .verdana {
+            font-family: Verdana, sans-serif;
+        }
+        .times {
+            font-family: "Times New Roman", serif;
+        }
+        .georgia {
+            font-family: Georgia, serif;
+        }
+        .courier {
+            font-family: "Courier New", monospace;
+        }
+
+        /* Stack Formula */
+        .stack { 
+        /* ↓ The flex context */ 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: flex-start;
+        } 
+        .stack > * { 
+        /* ↓ Any extant vertical margins are removed */ 
+            margin-block: 0; 
+        }  
+        .stack > * + * { 
+        /* ↓ Top margin is only applied to successive elements */ 
+            margin-block-start: var(--space, 1rem); 
+        }
+
+        /* Custom */
+        body {
+            background: #eee;
+            margin-top: 2rem;
+        }
+        h1 {
+            color: green;
+            text-shadow: 1px 1px 0 white;
+            text-decoration: underline;
+        }
+        p {
+            color: #333;
+        }
+        h2 {
+            color: #555;
+            text-shadow: 1px 1px 0 white;
+        }
+
+    </style>
+</head>
+<body>
+    <main class="stack">
+        <h1>Web Safe Fonts</h1>
+
+            <div class="arial">
+                <h2>Arial sans-serif</h2>
+                <p>The quick brown fox jumps over the lazy dog.</p>
+                <p>ALL CAPS TEXT FOR ARIAL SANS-SERIF</p>
+            </div>
+
+            <div class="verdana">
+                <h2>Verdana sans-serif</h2>
+                <p>The quick brown fox jumps over the lazy dog.</p>
+                <p>ALL CAPS TEXT FOR VERDANA SANS-SERIF</p>
+            </div>
+
+            <div class="times">
+                <h2>Times New Roman serif</h2>
+                <p>The quick brown fox jumps over the lazy dog.</p>
+                <p>ALL CAPS TEXT FOR TIMES NEW ROMAN SERIF</p>
+            </div>
+
+            <div class="georgia">
+                <h2>Georgia serif</h2>
+                <p>The quick brown fox jumps over the lazy dog.</p>
+                <p>ALL CAPS TEXT FOR GEORGIA SERIF</p>
+            </div>
+
+            <div class="courier">
+                <h2>Courier New monospace</h2>
+                <p>The quick brown fox jumps over the lazy dog.</p>
+                <p>ALL CAPS TEXT FOR COURIER NEW MONOSPACE</p>
+            </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mover un DIV.</title>
+    <style>
+        :root {
+        font-size: 1.5rem;
+        }
+        * { 
+        box-sizing: border-box;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        body {
+        background-color: #eeeeee;
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+
+        .main {
+        width: 60%;
+        height: 100px;
+        position: relative;
+        background-color: #ccc;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        }
+
+        .popup {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        left: 0; /* empieza en la orilla del viewport */
+        width: 100%;
+        height: 100px;
+        background-color: #aaa;
+        border-radius: 0.5rem;
+        color: #333;
+        animation: slideIn 2s ease-out forwards;
+        }
+
+        code {
+            font-weight: bold;
+        }
+
+        @keyframes slideIn {
+        0% {
+            transform: translateX(-100%);
+        }
+        100% {
+            transform: translateX(0); /* determina la posición final */
+        }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main">
+    <div class="popup"><code>;)</code></div>
+    </div>    
+
+</body>
+</html>

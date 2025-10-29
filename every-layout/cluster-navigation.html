@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Every Layout - The Cluster</title>
+  <style>
+
+    /* Generales */
+    :root {
+      font-size: 1.1rem;
+    }
+    * { 
+      box-sizing: border-box;
+      font-family: 'Courier New', Courier, monospace, serif;
+    }
+
+    /* Cluster */
+    .cluster {
+      width: 80%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 2rem;
+      background-color: #fefefe;
+      border-radius: 0.50rem;
+      margin-inline: auto;
+    }
+    .logo img {
+      width: 3rem;
+    }
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Custom */
+    body {
+      background-color: #eeeeee;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .nav-links a {
+      text-decoration: underline;
+      color: #777;
+      font-weight: 500;
+    }
+    .nav-links a:hover {
+      color: #000;
+    }
+
+  </style>
+</head>
+<body>
+
+  <nav class="cluster">
+    <div class="logo"><img src="/img/logo.svg" alt="By paomedia - https://github.com/paomedia/small-n-flat, CC0, https://commons.wikimedia.org/w/index.php?curid=156647796"></div>
+    <ul class="nav-links">
+      <li><a href="#">Elemento 1</a></li>
+      <li><a href="#">Elemento 2</a></li>
+      <li><a href="#">Elemento 3</a></li>
+      <li><a href="#">Elemento 4</a></li>
+      <li><a href="#">Elemento 5</a></li>
+    </ul>
+  </nav>
+  
+</body>
+</html>

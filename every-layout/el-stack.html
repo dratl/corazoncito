@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Every Layout - The Stack</title>
+    <style>
+
+        /* Generales */
+        :root {
+            font-size: 0.9rem;
+            --space: 1.5rem;
+        }
+        body {
+            background: #eee;
+        }
+        * { 
+        box-sizing: border-box;
+        font-family: Georgia, serif;
+        }
+        main {
+            max-inline-size: 60ch; 
+            margin-inline: auto; 
+        }
+
+
+        /* Stack Formula */
+        .stack { 
+        /* ↓ The flex context */ 
+        display: flex; 
+        flex-direction: column; 
+        justify-content: flex-start;
+        } 
+        .stack > * { 
+        /* ↓ Any extant vertical margins are removed */ 
+        margin-block: 0; 
+        }  
+        .stack > * + * { 
+        /* ↓ Top margin is only applied to successive elements */ 
+        margin-block-start: var(--space, 1.5rem); 
+        }
+
+        /* Custom */
+        h2 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-top: 3rem;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            color: green;
+        }
+        h3 {
+            font-size: 1.8rem;
+            color: #666;
+            text-shadow: 1px 1px 0 white;
+        }
+        p {
+            font-size: 1.2rem;
+        }
+        div, h3, h2, p {
+            /* border: 1px solid black;  Border to visualize layout */
+        }
+
+    </style>
+</head>
+<body>
+<main>
+    <h2>1. <code>div.stack>(div>h3)+div*2>p</code></h2>
+<hr>
+     <div class="stack"> 
+        <div><h3>Quis autem vel eum iure reprehenderit qui in ea voluptate.</h3></div> 
+        <div><p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p></div> 
+        <div><p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p></div>
+        <div><h3>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</h3></div> 
+        <div><p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p></div> 
+        <div><p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p></div>
+    </div>
+<hr>
+    <h2>2. <code>div.stack>div>h3+p*2</code></h2>
+<hr>
+    <div class="stack">
+        <div>
+            <h3>Duis aute irure dolor in reprehenderit</h3>
+            <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+            <h3>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam</h3>
+            <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+        </div>
+    </div>
+<hr>
+    <h2>3. <code style="color: green;">div.stack>h3+p*2</code></h2>
+<hr>
+    <div class="stack">
+        <h3>Sed ut perspiciatis unde omnis iste natus error</h3>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+        <h3>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam</h3>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+    </div>
+<hr>
+    <h2>4. <code>div>h3+p*2</code></h2>
+<hr>
+    <div>
+        <h3>Excepteur sint occaecat cupidatat non proident</h3>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+        <h3>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam</h3>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+    </div>
+<hr>
+</main>
+</body>
+</html>
