@@ -27,7 +27,7 @@ a {
   text-decoration: none;
 }
 a:hover {
-  color: red;
+  color: #aa0000;
 }
 a:visited {
   color: purple;
