@@ -75,7 +75,7 @@ canvas{
 /* Case Study */
 .list-files-case-study {
   list-style: none;
-  padding: 0;
+  padding: 0 2rem 0 0;
 }
 
 .list-files-case-study li {
