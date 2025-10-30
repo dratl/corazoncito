@@ -32,14 +32,13 @@ a:hover {
 a:visited {
   color: purple;
 }
-
 .center {
   background-image: url(../i/bg-grissd.png);
   background-position: left top;
   max-width: 60ch; 
   margin: 0 auto;
-
 }
+
 /* Skills chart*/
 .chart-wrap {
   width:100%;
@@ -53,15 +52,16 @@ canvas{
   width:100%;
   height:30rem;
 }
+
 /* Sidebar Formula */
 .with-sidebar {
   display: flex;
   flex-wrap: wrap;
-  gap: 3rem;
+  gap: 4rem;
 }
 .with-sidebar > :first-child {
-/* sidebar: ancho fijo, pero puede crecer si hay espacio */
-  flex-basis: 30rem;  /* o 200px, al gusto */
+  /* sidebar: ancho fijo, pero puede crecer si hay espacio */
+  flex-basis: 30rem;  /* al gusto */
   flex-grow: 1;
   /*justify-items: center;
   align-items: center;  Comentamos para alinear la lista a top left */

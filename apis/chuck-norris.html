@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>      
+body {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    background-color: #FF840B;
+}
+h3 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 48px;
+}
+main { 
+    max-inline-size: 100ch; 
+    margin-inline: auto; 
+}
+/* Chuck Norris */
+main article.chuck-norris {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+main article.chuck-norris section { 
+    text-align: center;
+    color: white;
+    max-width: 48%;
+    padding: 60px 12px;
+}
+p {
+    font-size: 20px;
+    font-weight: 300;
+    margin: 24px;
+    padding: 24px;
+    background-color: aliceblue;
+    color: #121212;
+    border-radius: 8px;
+}
+p.credit {
+    font-size: 16px;;
+    background-color: transparent;
+    padding: 12px;
+    margin: 12px;
+}
+p.credit a {
+    color: #121212;
+    font-weight: 600;
+}
+
+p.credit a:hover {
+    color: #333333;
+}
+button {
+    background-color: #FD5001;
+    color: white;
+    font-size: 16px;
+    padding: 12px;
+    margin: 12px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    box-shadow: 0 6px #4d4d4d;
+}
+button:hover {
+    background-color: #3e8e41;
+}
+button:active {
+    background-color: #04AA6D;
+    box-shadow: 0 3px #272727;
+    transform: translateY(4px);
+}
+    </style>
+</head>
+<body>
+    <main>
+        <article class="chuck-norris">
+            <section>
+                <h3>Retrieve a random Chuck Norris fact:</h3>
+                <p id="fact"></p>
+                <button id="newFactButton">I can't believe it's butter!</button>
+                <p class="credit"><a href="https://api.chucknorris.io/">chucknorris.io</a> is a free JSON API for hand curated Chuck Norris facts.</p>
+            </section>
+            <section>
+                <img src="i/chuck-norris.png" alt="Chuck Norris">
+            </section>
+        </article>
+    </main>
+    <script src="j/chuck-norris.js"></script>
+</body>
+</html>
