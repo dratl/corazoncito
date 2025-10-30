@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox CheatSheet</title>
+    <link rel="stylesheet" href="c/flexbox.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css" rel="stylesheet" />
+</head>
+<body>
+    <h1>CSS Flexbox CheatSheet</h1>
+    <!-- Flex Containers: display -->
+    <h2>Flex Containers: display</h2>
+    <div class="parent">
+        <span>display: flex;</span>
+        <div class="display-flex">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+        </div>
+    </div>
+    <div class="parent">
+        <span class="span-display-inline-flex">display: inline-flex;</span>
+        <div class="display-inline-flex">
+            <div class="item">1</div>
+        </div>
+    </div>
+    <div class="code">
+        <span class="title"><svg class="copy-text w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" d="M18 3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1V9a4 4 0 0 0-4-4h-3a1.99 1.99 0 0 0-1 .267V5a2 2 0 0 1 2-2h7Z" clip-rule="evenodd"/>
+            <path fill-rule="evenodd" d="M8 7.054V11H4.2a2 2 0 0 1 .281-.432l2.46-2.87A2 2 0 0 1 8 7.054ZM10 7v4a2 2 0 0 1-2 2H4v6a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3Z" clip-rule="evenodd"/>
+          </svg>
+          </span>
+        <div>
+            <pre><code class="language-css">
+.parent {
+    display: &lt;value&gt;;
+}
+            </code></pre>
+        </div>
+    </div>
+    <!-- Ordering & Orientation: flex-direction -->
+    <h2>Ordering & Orientation: flex-direction</h2>
+    <div class="parent">
+        <span>flex-direction: row;</span>
+        <div class="flex-direction-row">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+        </div>
+    </div>
+    <div class="parent">
+        <span>flex-direction: row-reverse;</span>
+        <div class="flex-direction-row-reverse">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+        </div>
+    </div>
+    <div class="parent">
+        <span>flex-direction: column;</span>
+        <div class="flex-direction-column">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+        </div>
+    </div>
+    <div class="parent">
+        <span>flex-direction: column-reverse;</span>
+        <div class="flex-direction-column-reverse">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+        </div>
+    </div>
+    <div class="code">
+        <span class="title"><svg class="copy-text w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" d="M18 3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1V9a4 4 0 0 0-4-4h-3a1.99 1.99 0 0 0-1 .267V5a2 2 0 0 1 2-2h7Z" clip-rule="evenodd"/>
+            <path fill-rule="evenodd" d="M8 7.054V11H4.2a2 2 0 0 1 .281-.432l2.46-2.87A2 2 0 0 1 8 7.054ZM10 7v4a2 2 0 0 1-2 2H4v6a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3Z" clip-rule="evenodd"/>
+          </svg>
+          </span>
+        <div>
+            <pre><code class="language-css">
+.parent {
+    display: flex;
+    flex-direction: &lt;value&gt;;
+    height: 210px;
+}
+            </code></pre>
+        </div>
+    </div>
+    <!-- Ordering & Orientation: flex-wrap -->
+    <h2>Ordering & Orientation: flex-wrap</h2>
+    <div class="parent">
+        <span>flex-wrap: nowrap;</span>
+        <div class="flex-wrap-nowrap">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+        </div>
+    </div>
+    <div class="parent">
+        <span>flex-wrap: wrap;</span>
+        <div class="flex-wrap-wrap">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+        </div>
+    </div>
+    <div class="parent">
+        <span>flex-wrap: wrap-reverse;</span>
+        <div class="flex-wrap-wrap-reverse">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+        </div>
+    </div>
+    <div class="code">
+        <span class="title"><svg class="copy-text w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" d="M18 3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1V9a4 4 0 0 0-4-4h-3a1.99 1.99 0 0 0-1 .267V5a2 2 0 0 1 2-2h7Z" clip-rule="evenodd"/>
+            <path fill-rule="evenodd" d="M8 7.054V11H4.2a2 2 0 0 1 .281-.432l2.46-2.87A2 2 0 0 1 8 7.054ZM10 7v4a2 2 0 0 1-2 2H4v6a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3Z" clip-rule="evenodd"/>
+          </svg>
+          </span>
+        <div>
+            <pre><code class="language-css">
+.parent {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: &lt;value&gt;;
+    height: 210px;
+}
+.child {
+    width: 40%;
+}
+            </code></pre>
+        </div>
+    </div>
+    <!-- Ordering & Orientation: flex-flow -->
+    <h2>Ordering & Orientation: flex-flow</h2>
+    <div class="parent">
+        <span>flex-flow: row nowrap;</span>
+        <div class="flex-flow-row-nowrap">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+        </div>
+    </div>
+    <div class="parent">
+        <span>flex-flow: column-reverse;</span>
+        <div class="flex-flow-column-reverse">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+        </div>
+    </div>
+    <div class="parent">
+        <span>flex-flow: column wrap;</span>
+        <div class="flex-flow-column-wrap">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+        </div>
+    </div>
+    <div class="parent">
+        <span>flex-flow: row-reverse wrap-reverse;</span>
+        <div class="flex-flow-row-reverse-wrap-reverse">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+        </div>
+    </div>
+    <div class="code">
+        <span class="title"><svg class="copy-text w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" d="M18 3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1V9a4 4 0 0 0-4-4h-3a1.99 1.99 0 0 0-1 .267V5a2 2 0 0 1 2-2h7Z" clip-rule="evenodd"/>
+            <path fill-rule="evenodd" d="M8 7.054V11H4.2a2 2 0 0 1 .281-.432l2.46-2.87A2 2 0 0 1 8 7.054ZM10 7v4a2 2 0 0 1-2 2H4v6a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3Z" clip-rule="evenodd"/>
+          </svg>
+          </span>
+        <div>
+            <pre><code class="language-css">
+ .parent {
+    display: flex;
+    flex-flow: &lt;value&gt;;
+    height: 210px;
+}      
+.child {
+    width: 40%;
+    height: 40%;
+}
+            </code></pre>
+        </div>
+    </div>
+    <!-- Ordering & Orientation: order -->
+    <h2>Ordering & Orientation: order</h2>
+    <div class="parent">
+        <span>order: -1;</span>
+        <div class="order-minus-one">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item child">3</div>
+            <div class="item">4</div>
+        </div>
+    </div>
+    <div class="parent">
+        <span>order: 0;</span>
+        <div class="order-zero">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item child">3</div>
+            <div class="item">4</div>
+        </div>
+    </div>
+    <div class="parent">
+        <span>order: 1;</span>
+        <div class="order-one">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item child">3</div>
+            <div class="item">4</div>
+        </div>
+    </div>
+    <div class="code">
+        <span class="title"><svg class="copy-text w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" d="M18 3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1V9a4 4 0 0 0-4-4h-3a1.99 1.99 0 0 0-1 .267V5a2 2 0 0 1 2-2h7Z" clip-rule="evenodd"/>
+            <path fill-rule="evenodd" d="M8 7.054V11H4.2a2 2 0 0 1 .281-.432l2.46-2.87A2 2 0 0 1 8 7.054ZM10 7v4a2 2 0 0 1-2 2H4v6a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3Z" clip-rule="evenodd"/>
+          </svg>
+          </span>
+        <div>
+            <pre><code class="language-css">
+.parent {
+    display: flex;
+    height: 210px;
+}
+.child--featured {
+    order: &lt;value&gt;;
+}
+            </code></pre>
+        </div>
+    </div>
+    <!-- Aligment: justify-content -->
+    <h2>Aligment: justify-content</h2>
+     <div class="parent">
+        <span>justify-content: flex-start;</span>
+        <div class="justify-content-flex-start">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+        </div>
+     </div>
+    <div class="parent">
+        <span>justify-content: flex-end;</span>
+        <div class="justify-content-flex-end">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+        </div>
+    </div>
+    <div class="parent">
+        <span>justify-content: center;</span>
+        <div class="justify-content-center">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+        </div>
+    </div>
+    <div class="parent">
+        <span>justify-content: space-between;</span>
+        <div class="justify-content-space-between">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+        </div>
+    </div>
+    <div class="parent">
+        <span>justify-content: space-around;</span>
+        <div class="justify-content-space-around">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+        </div>
+    </div>
+    <div class="parent">
+        <span>justify-content: space-evenly;</span>
+        <div class="justify-content-space-evenly">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+        </div>
+    </div>
+    <div class="code">
+        <span class="title"><svg class="copy-text w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" d="M18 3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1V9a4 4 0 0 0-4-4h-3a1.99 1.99 0 0 0-1 .267V5a2 2 0 0 1 2-2h7Z" clip-rule="evenodd"/>
+            <path fill-rule="evenodd" d="M8 7.054V11H4.2a2 2 0 0 1 .281-.432l2.46-2.87A2 2 0 0 1 8 7.054ZM10 7v4a2 2 0 0 1-2 2H4v6a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3Z" clip-rule="evenodd"/>
+          </svg>
+          </span>
+        <div>
+            <pre><code class="language-css">
+.parent {
+    display: flex;
+    justify-content: &lt;value&gt;;
+    height: 210px;
+}
+            </code></pre>
+        </div>
+    </div>
+    <!-- Aligment: align-items -->
+    <h2>Aligment: align-items</h2>
+    <div class="parent">
+        <span>align-items: stretch;</span>
+        <div class="align-items-stretch">
+            <div class="item">1<br>2</div>
+            <div class="item">2</div>
+            <div class="item">3<br>2<br>1</div>
+            <div class="item">4</div>
+        </div>
+    </div>
+    <div class="parent">
+        <span>align-items: flex-start;</span>
+        <div class="align-items-flex-start">
+            <div class="item">1<br>2</div>
+            <div class="item">2</div>
+            <div class="item">3<br>2<br>1</div>
+            <div class="item">4</div>
+        </div>
+    </div>
+    <div class="parent">
+        <span>align-items: flex-end;</span>
+        <div class="align-items-flex-end">
+            <div class="item">1<br>2</div>
+            <div class="item">2</div>
+            <div class="item">3<br>2<br>1</div>
+            <div class="item">4</div>
+        </div>
+    </div>
+    <div class="parent">
+        <span>align-items: center;</span>
+        <div class="align-items-center">
+            <div class="item">1<br>2</div>
+            <div class="item">2</div>
+            <div class="item">3<br>2<br>1</div>
+            <div class="item">4</div>
+        </div>
+    </div>
+    <div class="parent">
+        <span>align-items: baseline;</span>
+        <div class="align-items-baseline">
+            <div class="item">1<br>2</div>
+            <div class="item">2</div>
+            <div class="item">3<br>2<br>1</div>
+            <div class="item">4</div>
+        </div>
+    </div>
+    <div class="parent">
+        <span>align-items: auto;</span>
+        <div class="align-items-auto">
+            <div class="item">1<br>2</div>
+            <div class="item">2</div>
+            <div class="item">3<br>2<br>1</div>
+            <div class="item">4</div>
+        </div>
+    </div>
+    <div class="code">
+        <span class="title"><svg class="copy-text w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" d="M18 3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1V9a4 4 0 0 0-4-4h-3a1.99 1.99 0 0 0-1 .267V5a2 2 0 0 1 2-2h7Z" clip-rule="evenodd"/>
+            <path fill-rule="evenodd" d="M8 7.054V11H4.2a2 2 0 0 1 .281-.432l2.46-2.87A2 2 0 0 1 8 7.054ZM10 7v4a2 2 0 0 1-2 2H4v6a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3Z" clip-rule="evenodd"/>
+          </svg>
+          </span>
+        <div>
+            <pre><code class="language-css">
+.parent {
+    display: flex;
+    align-items: &lt;value&gt;;
+    height: 210px;
+}
+            </code></pre>
+        </div>
+    </div>
+    <!-- Aligment: align-self -->
+    <h2>Aligment: align-self</h2>
+    <div class="parent">
+        <span>align-self: auto;</span>
+        <div class="align-self-auto">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item child">3</div>
+            <div class="item">4</div>
+        </div>
+    </div>
+    <div class="parent">
+        <span>align-self: stretch;</span>
+        <div class="align-self-stretch">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item child">3</div>
+            <div class="item">4</div>
+        </div>
+    </div>
+    <div class="parent">
+        <span>align-self: flex-start;</span>
+        <div class="align-self-flex-start">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item child">3</div>
+            <div class="item">4</div>
+        </div>
+    </div>
+    <div class="parent">
+        <span>align-self: flex-end;</span>
+        <div class="align-self-flex-end">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item child">3</div>
+            <div class="item">4</div>
+        </div>
+    </div>
+    <div class="parent">
+        <span>align-self: center;</span>
+        <div class="align-self-center">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item child">3</div>
+            <div class="item">4</div>
+        </div>
+    </div>
+    <div class="parent">
+        <span>align-self: baseline;</span>
+        <div class="align-self-baseline">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item child">3</div>
+            <div class="item">4</div>
+        </div>
+    </div>
+    <div class="code">
+        <span class="title"><svg class="copy-text w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" d="M18 3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1V9a4 4 0 0 0-4-4h-3a1.99 1.99 0 0 0-1 .267V5a2 2 0 0 1 2-2h7Z" clip-rule="evenodd"/>
+            <path fill-rule="evenodd" d="M8 7.054V11H4.2a2 2 0 0 1 .281-.432l2.46-2.87A2 2 0 0 1 8 7.054ZM10 7v4a2 2 0 0 1-2 2H4v6a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3Z" clip-rule="evenodd"/>
+          </svg>
+          </span>
+        <div>
+            <pre><code class="language-css">
+.parent {
+    display: flex;
+    height: 210px;
+}    
+.child--featured {
+    align-self: &lt;value&gt;;
+}
+            </code></pre>
+        </div>
+    </div>
+    <!-- Aligment: align-content -->
+    <h2>Aligment: align-content</h2>
+    <div class="parent">
+        <span>align-content: flex-start;</span>
+        <div class="align-content-flex-start">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+        </div>
+    </div>
+    <div class="parent">
+        <span>align-content: flex-end;</span>
+        <div class="align-content-flex-end">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+        </div>
+    </div>
+    <div class="parent">
+        <span>align-content: center;</span>
+        <div class="align-content-center">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+        </div>
+    </div>
+    <div class="parent">
+        <span>align-content: space-between;</span>
+        <div class="align-content-space-between">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+        </div>
+    </div>
+    <div class="parent">
+        <span>align-content: space-around;</span>
+        <div class="align-content-space-around">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+        </div>
+    </div>
+    <div class="parent">
+        <span>align-content: stretch;</span>
+        <div class="align-content-stretch">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+        </div>
+    </div>
+    <div class="code">
+        <span class="title"><svg class="copy-text w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" d="M18 3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1V9a4 4 0 0 0-4-4h-3a1.99 1.99 0 0 0-1 .267V5a2 2 0 0 1 2-2h7Z" clip-rule="evenodd"/>
+            <path fill-rule="evenodd" d="M8 7.054V11H4.2a2 2 0 0 1 .281-.432l2.46-2.87A2 2 0 0 1 8 7.054ZM10 7v4a2 2 0 0 1-2 2H4v6a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3Z" clip-rule="evenodd"/>
+          </svg>
+          </span>
+        <div>
+            <pre><code class="language-css">
+.parent {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: &lt;value&gt;;
+    height: 210px;
+}
+.child {
+    width: 40%;
+}
+            </code></pre>
+        </div>
+    </div>
+    <!-- Flexibility: flex-grow -->
+    <h2>Flexibility: flex-grow</h2>
+    <div class="parent">
+        <span>flex-grow: 0;</span>
+        <div class="flex-grow-zero">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item child">3</div>
+            <div class="item">4</div>
+        </div>
+    </div>
+    <div class="parent">
+        <span>flex-grow: 1;</span>
+        <div class="flex-grow-one">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item child">3</div>
+            <div class="item">4</div>
+        </div>
+    </div>
+    <div class="code">
+        <span class="title"><svg class="copy-text w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" d="M18 3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1V9a4 4 0 0 0-4-4h-3a1.99 1.99 0 0 0-1 .267V5a2 2 0 0 1 2-2h7Z" clip-rule="evenodd"/>
+            <path fill-rule="evenodd" d="M8 7.054V11H4.2a2 2 0 0 1 .281-.432l2.46-2.87A2 2 0 0 1 8 7.054ZM10 7v4a2 2 0 0 1-2 2H4v6a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3Z" clip-rule="evenodd"/>
+          </svg>
+          </span>
+        <div>
+            <pre><code class="language-css">
+.parent {
+    display: flex;
+    height: 210px;
+}
+.child--featured {
+    flex-grow: &lt;value&gt;;
+}
+            </code></pre>
+        </div>
+    </div>
+    <!-- Flexibility: flex-shrink -->
+    <h2>Flexibility: flex-shrink</h2>
+    <div class="parent">
+        <span>flex-shrink: 0;</span>
+        <div class="flex-shrink-zero">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item child">3</div>
+            <div class="item">4</div>
+        </div>
+    </div>
+    <div class="parent">
+        <span>flex-shrink: 1;</span>
+        <div class="flex-shrink-one">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item child">3</div>
+            <div class="item">4</div>
+        </div>
+    </div>
+    <div class="code">
+        <span class="title"><svg class="copy-text w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" d="M18 3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1V9a4 4 0 0 0-4-4h-3a1.99 1.99 0 0 0-1 .267V5a2 2 0 0 1 2-2h7Z" clip-rule="evenodd"/>
+            <path fill-rule="evenodd" d="M8 7.054V11H4.2a2 2 0 0 1 .281-.432l2.46-2.87A2 2 0 0 1 8 7.054ZM10 7v4a2 2 0 0 1-2 2H4v6a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3Z" clip-rule="evenodd"/>
+          </svg>
+          </span>
+        <div>
+            <pre><code class="language-css">
+.parent {
+    display: flex;
+    height: 210px;
+}
+.child {
+    width: 45%;
+}    
+.child--featured {
+    flex-shrink: &lt;value&gt;;
+}
+            </code></pre>
+        </div>
+    </div>
+    <!-- Flexibility: flex-basis -->
+    <h2>Flexibility: flex-basis</h2>
+    <div class="parent">
+        <span>flex-basis: 30%;</span>
+        <div class="flex-basis-30percent">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item child">3</div>
+            <div class="item">4</div>
+        </div>
+    </div>
+    <div class="parent">
+        <span>flex-basis: 50%;</span>
+        <div class="flex-basis-50percent">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item child">3</div>
+            <div class="item">4</div>
+        </div>
+    </div>
+    <div class="parent">
+        <span>flex-basis: content;</span>
+        <div class="flex-basis-content">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item child">3</div>
+            <div class="item">4</div>
+        </div>
+    </div>
+    <div class="parent">
+        <span>flex-basis: auto;</span>
+        <div class="flex-basis-auto">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item child">3</div>
+            <div class="item">4</div>
+        </div> 
+    </div>
+    <div class="code">
+        <span class="title"><svg class="copy-text w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" d="M18 3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1V9a4 4 0 0 0-4-4h-3a1.99 1.99 0 0 0-1 .267V5a2 2 0 0 1 2-2h7Z" clip-rule="evenodd"/>
+            <path fill-rule="evenodd" d="M8 7.054V11H4.2a2 2 0 0 1 .281-.432l2.46-2.87A2 2 0 0 1 8 7.054ZM10 7v4a2 2 0 0 1-2 2H4v6a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3Z" clip-rule="evenodd"/>
+          </svg>
+          </span>
+        <div>
+            <pre><code class="language-css">
+.parent {
+    display: flex;
+    flex-wrap: wrap;
+    height: 210px;
+}
+.child--featured {
+    flex-basis: &lt;value&gt;;
+}
+            </code></pre>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+    <script src="j/copy-text.js"></script>
+</body>
+</html>
