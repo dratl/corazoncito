@@ -1,49 +1,69 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Every Layout - The Switcher</title>
 <style>
-    .switcher {
-        display: flex;
-        flex-wrap: wrap;
-        /* ↓ The default value is the first point on the modular scale */
-        gap: var(--gutter, var(--s1));
-        /* ↓ The width at which the layout “breaks” */
-        --threshold: 50rem;
-        /*  ↓ Spacing unit */
-        --s1: 1rem;
-        /*  ↓ Default gutter between items */
-        --gutter: var(--s1);
-    }
-
-    .switcher>* {
-        /* ↓ Allow children to grow */
-        flex-grow: 1;
-        /* ↓ Switch the layout at the --threshold */
-        flex-basis: calc((var(--threshold) - 100%) * 999);
-    }
-
-    .switcher> :nth-last-child(n+5),
-    .switcher> :nth-last-child(n+5)~* {
-        /* ↓ Switch to a vertical configuration if there are more than 5 child elements */
-        flex-basis: 100%;
-    }
-
-    /* Aplica solo a <div> sin class (o con class vacío) dentro de .switcher */
-    .switcher>div:not([class]),
-    .switcher>div[class=""] {
-        border: 1px solid black;
-    }
+/* Generales */
+:root {
+  --gutter: 1rem;
+}
+* { 
+  box-sizing: border-box;
+}
+body {
+  font-size: 1.1rem;
+  background-color: #eee;
+  font-family: 'Courier New', Courier, monospace, serif;
+}
+main {
+  max-inline-size:80ch;
+  margin-inline: auto;
+}
+/* Switcher formula */
+.switcher {
+  display: flex;
+  flex-wrap: wrap;
+  /* ↓ The default value is the first point on the modular scale */
+  gap: var(--gutter, var(--s1));
+  /* ↓ The width at which the layout “breaks” */
+  --threshold: 30rem;
+  /*  ↓ Spacing unit */
+  --s1: 1rem;
+  /*  ↓ Default gutter between items */
+  --gutter: var(--s1);
+}
+.switcher>* {
+  /* ↓ Allow children to grow */
+  flex-grow: 1;
+  /* ↓ Switch the layout at the --threshold */
+  flex-basis: calc((var(--threshold) - 100%) * 999);
+}
+.switcher> :nth-last-child(n+5),
+.switcher> :nth-last-child(n+5)~* {
+  /* ↓ Switch to a vertical configuration if there are more than 5 child elements */
+flex-basis: 100%;
+}
+/* Custom styles */
+/* Applies only to <div> without class (or with empty class) inside .switcher */
+.switcher>div:not([class]),
+.switcher>div[class=""] {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: white;
+}
 </style>
 </head>
 <body>
-  <div class="switcher">
-    <div>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</div>
-    <div>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</div>
-    <div>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
-    <div>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</div>
-  </div>
+  <main>
+    <div class="switcher">
+      <div>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis .</div>
+      <div>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</div>
+      <div>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam.</div>
+      <div>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</div>
+    </div>
+  </main>
 </body>
 </html>
