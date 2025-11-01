@@ -72,12 +72,12 @@ canvas{
   flex-grow: 999;
   min-inline-size: 50%;
 }
+
 /* Case Study */
 .list-files-case-study {
   list-style: none;
   padding: 0 2rem 0 0;
 }
-
 .list-files-case-study li {
   padding-left: 3rem;
   position: relative;
@@ -87,7 +87,6 @@ canvas{
 .list-files-case-study li:hover {
   background-color: #eee;
 }
-
 /* Bullet for Miro */
 .list-files-case-study .miro::before {
   content: '';
@@ -100,7 +99,6 @@ canvas{
   background-size: contain;
   background-repeat: no-repeat;
 }
-
 /* Bullet for Figma */
 .list-files-case-study .figma::before {
   content: '';
@@ -113,7 +111,6 @@ canvas{
   background-size: contain;
   background-repeat: no-repeat;
 }
-
 /* Bullet for Report */
 .list-files-case-study .report::before {
   content: '';
@@ -144,4 +141,75 @@ canvas{
 }
 .list-code-canvas li:hover {
   background-color: #ddd;
+}
+
+/* The Graphics grid */
+/* The Grid Formula */
+.grid {
+  display: grid;
+  grid-gap: 1rem;
+  --minimum: 19ch;
+}
+
+@supports (width: min(var(--minimum), 100%)) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(var(--minimum), 100%), 1fr));
+  }
+}
+
+/* Custom Card Styles */
+/* Card */
+.grid > .card {
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  transition: transform 1.2s ease;
+}
+
+.grid > .card:hover {
+  transform: translateY(-4px);
+}
+
+/* Image Container */
+.responsive-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 2; /* Mantener proporción fija */
+  background-color: #f0f0f0;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+/* Placeholder (SVG) */
+.responsive-image img {
+  width: 100%;
+  height: auto;
+  transition: opacity 0.4s ease;
+}
+
+/* Imagen real (fondo) */
+.responsive-image::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../i/fake-180-120.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 0.4s ease;
+  border-radius: 0.35rem;
+}
+
+/* HOVER: ocultar placeholder, mostrar imagen real */
+.image-link:hover .responsive-image img {
+  opacity: 0;
+}
+
+.image-link:hover .responsive-image::before {
+  opacity: 1;
 }

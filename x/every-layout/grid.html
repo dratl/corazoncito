@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Every Layout - The Grid</title>
+    <style>
+        /* Generales */
+        * { 
+        box-sizing: border-box;
+        }
+        body {
+        font-size: 1rem;
+        background-color: #eee;
+        font-family: 'Courier New', Courier, monospace, serif;
+        }
+        main {
+        max-width: 80ch;
+        margin-inline: auto;
+        }
+        h2 {
+            font-family: Georgia, serif;
+        }
+        /* The Grid Formula */
+        .grid { 
+        /* ↓ Establish a grid context */ 
+        display: grid; 
+        /* ↓ Set a gap between grid items  */ 
+        grid-gap: 2rem; 
+        /* ↓ Set the minimum column width */ 
+        --minimum: 24ch; 
+        } 
+        
+        @supports (width: min(var(--minimum), 100%)) { 
+        .grid { 
+            /* ↓ Enhance with the min() function 
+            into multiple columns */ 
+            grid-template-columns: repeat(auto-fit, minmax(min(var(--minimum), 100%), 1fr)); 
+        } 
+        }
+        /* Custom */
+        .grid > div {
+            background-color: white;
+            border-radius: 0.5rem;
+            padding: 1rem;
+        } 
+    </style>
+</head>
+<body>
+     <main>
+         <div class="grid">
+            <div>
+                <h2>1 Element</h2>
+                <p>I got dibs orema ipolitsum dolor sit amet, consectetur adipiscing elit. Maecenas tincidunt est facto vast.</p>
+            </div>
+            <div>
+                <h2>2 Element</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tincidunt majoris.</p>
+            </div>
+            <div>
+                <h2>3 Element</h2>
+                <p>Lorem ipsum dolor amet sit colorum, consectetur adipiscing elit. Maecenas tincidunt plurus et romulus alla citta.</p>
+            </div>
+            <div>
+                <h2>4 Element</h2>
+                <p>Clarinus cornetis ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</p>
+            </div>
+            <div>
+                <h2>5 Element</h2>
+                <p>Osoes mares et patres ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae perrilum.</p>
+            </div>
+            <div>
+                <h2>6 Element</h2>
+                <p>Tresonis lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</p>
+            </div>
+             </div>
+     </main>
+</body>
+</html>
