@@ -1,3 +1,275 @@
+Necesitamos arreglar los errores, la imagen "thumb" no aparece al hacer hover, solo hasta que se carga el popup y se ciera, entonces la imagen "thumb" aparece al hacer hover, pero no se ajusta al tamaño de su div, aparece cortada por estar al tamaño original y alineada a la izquierda superior
+
+'../i/portfolio/thumbs/01-pixel-band.png'
+'../i/portfolio/thumbs/02-xipe-bar.png'
+'../i/portfolio/thumbs/03-topsi.png'
+'../i/portfolio/thumbs/04-yumerang.png'
+
+La imagen que mostrará el popup será la versión grande de cada una, que está en:
+'../i/portfolio/01-pixel-band.png'
+'../i/portfolio/02-xipe-bar.png'
+'../i/portfolio/03-topsi.png'
+'../i/portfolio/04-yumerang.png'
+
+
+#CSS
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  font-size: 2rem;
+  line-height: 1.5;
+  font-family: 'Courier New', Courier, monospace;
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: Georgia, serif;
+  margin-block-start: 1rem;
+  margin-block-end: 1rem;
+}
+h1 { font-size: 4rem; }
+h2 { font-size: 3rem; margin-block-start: 8rem;}
+h3 { font-size: 2rem; }
+a {
+  color: blue;
+  text-decoration: none;
+}
+a:hover {
+  color: #aa0000;
+}
+a:visited {
+  color: purple;
+}
+.center {
+  background-image: url(../i/bg-grissd.png);
+  background-position: left top;
+  max-width: 60ch; 
+  margin: 0 auto;
+}
+
+/* Skills chart*/
+.chart-wrap {
+  width:100%;
+  height: 30rem;
+  max-width:100%;
+  background: #fff;
+  box-sizing:border-box;
+}
+canvas{
+  display:block;
+  width:100%;
+  height:30rem;
+}
+
+/* Sidebar Formula */
+.with-sidebar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+}
+.with-sidebar > :first-child {
+  /* sidebar: ancho fijo, pero puede crecer si hay espacio */
+  flex-basis: 30rem;  /* al gusto */
+  flex-grow: 1;
+  /*justify-items: center;
+  align-items: center;  Comentamos para alinear la lista a top left */
+}
+.with-sidebar > :last-child {
+  /* content principal: crece mucho más */
+  flex-basis: 0;
+  flex-grow: 999;
+  min-inline-size: 50%;
+}
+
+/* Case Study */
+.list-files-case-study {
+  list-style: none;
+  padding: 0 2rem 0 0;
+}
+.list-files-case-study li {
+  padding-left: 3rem;
+  position: relative;
+  margin-bottom: 2rem;
+  border-bottom: #333 1px solid;
+}
+.list-files-case-study li:hover {
+  background-color: #eee;
+}
+/* Bullet for Miro */
+.list-files-case-study .miro::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.4rem;
+  width: 2rem;
+  height: 2rem;
+  background-image: url('../i/miro-square.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+/* Bullet for Figma */
+.list-files-case-study .figma::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.4rem;
+  width: 2rem;
+  height: 2rem;
+  background-image: url('../i/figma-square.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+/* Bullet for Report */
+.list-files-case-study .report::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.4rem;
+  width: 2rem;
+  height: 2rem;
+  background-image: url('../i/pdf-square.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* List Code Canvas */
+.list-code-canvas {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin-block-start: 0;
+  margin-block-end: 2rem;
+  padding-inline: 0;
+  gap: 3rem;
+}
+.list-code-canvas li {
+  background-color: #eee;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+}
+.list-code-canvas li:hover {
+  background-color: #ddd;
+}
+
+/* The Graphics grid */
+/* The Grid Formula */
+.grid {
+  display: grid;
+  grid-gap: 1rem;
+  --minimum: 19ch;
+}
+
+@supports (width: min(var(--minimum), 100%)) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(var(--minimum), 100%), 1fr));
+  }
+}
+
+/* Custom Card Styles */
+/* Card */
+.grid > .card {
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  transition: transform 1.2s ease;
+}
+
+.grid > .card:hover {
+  transform: translateY(-4px);
+}
+
+/* Image Container */
+.responsive-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 2; /* Mantener proporción fija */
+  background-color: #f0f0f0;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+/* Placeholder (SVG) */
+.responsive-image img {
+  width: 100%;
+  height: auto;
+  transition: opacity 0.4s ease;
+}
+
+/* Imagen real (fondo) */
+.card .responsive-image::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 0.4s ease;
+  border-radius: 0.35rem;
+}
+
+/* HOVER: ocultar placeholder, mostrar imagen real */
+.card:hover .responsive-image img {
+  opacity: 0;
+}
+
+.card:hover .responsive-image::before {
+  opacity: 1;
+}
+
+/* Popup */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(30, 30, 30, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 999;
+}
+
+.popup-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.popup-image {
+  max-width: 90%;
+  max-height: 90%;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#HTML 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
