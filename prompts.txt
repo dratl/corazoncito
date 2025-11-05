@@ -1,71 +1,33 @@
-Cómo implementarias lo anterior en este código. El div card contiene una imagen de placeholder y al hacer hover se muestra la imagen real de data-hover. El div.card es la caja que contiene los elementos del portafolio, pero en este caso la imagen es pixel art, no todos serán pixel art, solo algunos, ¿Cómo lo puedo implementar de manera individual?
+Necesitamos centrar horizontalmente <ul class=""data-docs"> dentro de un contenedor <div> en CSS. Proporciona el código HTML y CSS necesario para lograr esto.
 
 
 #CSS
-/* Custom Card Styles */
-/* Card */
-.grid > .card {
-  background-color: white;
-  border-radius: 0.5rem;
-  padding: 1rem;
-  transition: transform 1.2s ease;
+/* Data Docs */
+.cv {
+  text-align: center;
 }
-
-.grid > .card:hover {
-  transform: translateY(-4px);
+.data-docs {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin-block-start: 0;
+  margin-block-end: 2rem;
+  padding-inline: 0;
+  gap: 3rem;
 }
-
-/* Image Container */
-.responsive-image {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 3 / 2; /* Mantener proporción fija */
-  background-color: #f0f0f0;
-
-  overflow: hidden;
-  margin-bottom: 1rem;
-  cursor: pointer;
-}
-
-/* Placeholder (SVG) */
-.responsive-image img {
-  width: 100%;
-  height: auto;
-  transition: opacity 0.4s ease;
-}
-
-/* Imagen real (fondo) */
-.card .responsive-image::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: 0;
-  z-index: 1;
-  transition: opacity 0.4s ease;
-  border-radius: 0.35rem;
-}
-
-.card:hover .responsive-image img {
-  opacity: 0;
-}
-
-.card:hover .responsive-image::before {
-  opacity: 1;
+.data-docs li {
+  background-color: #eee;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
 }
 
 #HTML 
 
-<div class="card" data-full="../i/portfolio/01-pixel-band.png" data-hover="../i/portfolio/thumbs/01-pixel-band.png">
-    <a href="#" class="image-link">
-        <div class="responsive-image">
-        <img src="i/image-placeholder.svg" alt="Pixel Band">
-        </div>
-    </a>
-    <h3>Pixel Band</h3>
-    <p>Exploring the grid layout system for responsive design.</p>
+<div class="cv">
+    <ul class="data-docs">
+        <li><a href="">English Resume</a></li>
+        <li><a href="">Curriculum Español</a></li>
+        <li><a href="">English Certificate</a></li>
+        <li><a href="">Email Contact</a></li>
+    </ul>
 </div>
