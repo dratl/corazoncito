@@ -176,7 +176,7 @@ canvas{
 .grid > .card {
   background-color: white;
   border-radius: 0.5rem;
-  padding: 1rem;
+  padding: 1rem 0;
   transition: transform 1.2s ease;
 }
 .grid > .card:hover {
