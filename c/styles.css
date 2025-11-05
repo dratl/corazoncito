@@ -73,6 +73,34 @@ canvas{
   min-inline-size: 50%;
 }
 
+/* Stack Formula */
+.stack { 
+  /* ↓ The flex context */ 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: flex-start;
+} 
+.stack > * { 
+  /* ↓ Any extant vertical margins are removed */ 
+  margin-block: 0; 
+}  
+.stack > * + * { 
+  /* ↓ Top margin is only applied to successive elements */ 
+  margin-block-start: var(--space, 1.5rem); 
+}
+
+/* The Grid Formula */
+.grid {
+  display: grid;
+  grid-gap: 1rem;
+  --minimum: 19ch;
+}
+@supports (width: min(var(--minimum), 100%)) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(var(--minimum), 100%), 1fr));
+  }
+}
+
 /* Case Study */
 .list-files-case-study {
   list-style: none;
@@ -123,7 +151,6 @@ canvas{
   background-size: contain;
   background-repeat: no-repeat;
 }
-
 /* List Code Canvas */
 .list-code-canvas {
   list-style: none;
@@ -143,20 +170,7 @@ canvas{
   background-color: #ddd;
 }
 
-/* The Graphics grid */
-/* The Grid Formula */
-.grid {
-  display: grid;
-  grid-gap: 1rem;
-  --minimum: 19ch;
-}
-
-@supports (width: min(var(--minimum), 100%)) {
-  .grid {
-    grid-template-columns: repeat(auto-fit, minmax(min(var(--minimum), 100%), 1fr));
-  }
-}
-
+/* The Graphics grid *
 /* Custom Card Styles */
 /* Card */
 .grid > .card {
@@ -165,11 +179,9 @@ canvas{
   padding: 1rem;
   transition: transform 1.2s ease;
 }
-
 .grid > .card:hover {
   transform: translateY(-4px);
 }
-
 /* Image Container */
 .responsive-image {
   position: relative;
@@ -181,14 +193,12 @@ canvas{
   margin-bottom: 1rem;
   cursor: pointer;
 }
-
 /* Placeholder (SVG) */
 .responsive-image img {
   width: 100%;
   height: auto;
   transition: opacity 0.4s ease;
 }
-
 /* Imagen real (fondo) */
 .card .responsive-image::before {
   content: '';
@@ -211,11 +221,9 @@ canvas{
 .card:hover .responsive-image img {
   opacity: 0;
 }
-
 .card:hover .responsive-image::before {
   opacity: 1;
 }
-
 
 /* Popup */
 .popup-overlay {
@@ -233,12 +241,10 @@ canvas{
   transition: opacity 0.3s ease;
   z-index: 999;
 }
-
 .popup-overlay.active {
   opacity: 1;
   pointer-events: auto;
 }
-
 .popup-image {
   max-width: 90%;
   max-height: 90%;
@@ -246,7 +252,6 @@ canvas{
   border-radius: 6px;
   transition: transform 0.3s ease;
 }
-
 .close-btn {
   position: absolute;
   top: 20px;
