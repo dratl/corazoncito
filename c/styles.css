@@ -32,6 +32,9 @@ a:hover {
 a:visited {
   color: purple;
 }
+ul {
+  font-size: 1.75rem;
+}
 .center {
   background-image: url(../i/bg-grissd.png);
   background-position: left top;
@@ -118,12 +121,58 @@ canvas{
   margin-block-start: 0;
   margin-block-end: 2rem;
   padding-inline: 0;
-  gap: 3rem;
+  gap: 2rem;
 }
 .data-docs li {
   background-color: #eee;
   padding: 0.5rem 1rem;
   border-radius: 1rem;
+  display: flex;
+}
+
+.data-docs .resume::before {
+  content: '';
+  position: relative;
+  left: 0;
+  top: 0.4rem;
+  width: 2rem;
+  height: 2rem;
+  background-image: url('../i/miro-square.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.data-docs .curriculum::before {
+  content: '';
+  position: relative;
+  left: 0;
+  top: 0.4rem;
+  width: 2rem;
+  height: 2rem;
+  background-image: url('../i/miro-square.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.data-docs .eng-certificate::before {
+  content: '';
+  position: relative;
+  left: 0;
+  top: 0.4rem;
+  width: 2rem;
+  height: 2rem;
+  background-image: url('../i/miro-square.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.data-docs .mail-contact::before {
+  content: '';
+  position: relative;
+  left: 0;
+  top: 0.4rem;
+  width: 2rem;
+  height: 2rem;
+  background-image: url('../i/miro-square.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 /* Case Study */
@@ -148,7 +197,7 @@ canvas{
   top: 0.4rem;
   width: 2rem;
   height: 2rem;
-  background-image: url('../i/miro-square.svg');
+  background-image: url('../i/icon-miro.svg');
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -160,7 +209,7 @@ canvas{
   top: 0.4rem;
   width: 2rem;
   height: 2rem;
-  background-image: url('../i/figma-square.svg');
+  background-image: url('../i/icon-figma.svg');
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -172,7 +221,7 @@ canvas{
   top: 0.4rem;
   width: 2rem;
   height: 2rem;
-  background-image: url('../i/pdf-square.svg');
+  background-image: url('../i/icon-pdf.svg');
   background-size: contain;
   background-repeat: no-repeat;
 }
