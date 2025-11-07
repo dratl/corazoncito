@@ -20,9 +20,9 @@ h1, h2, h3, h4, h5 {
   margin-block-end: 1rem;
 }
 h1 { font-size: 4rem; }
-h2 { font-size: 3rem; margin-block-start: 8rem;}
+h2 { font-size: 3rem; margin-block-start: 8rem; }
 h3 { font-size: 2rem; }
-h4 { font-size: 2.5rem; margin-block: 8rem 4rem; text-align: center;}
+h4 { font-size: 2.5rem; margin-block: 8rem 4rem; text-align: center; }
 a {
   color: blue;
   text-decoration: none;
@@ -260,36 +260,20 @@ canvas{
 }
 .close-btn {
   position: absolute;
-  top: 20px;
-  right: 30px;
+  top: 2rem;
+  right: 3rem;
   font-size: 2rem;
   color: white;
   cursor: pointer;
   font-weight: bold;
 }
-/* Footer lists */
-/* CV Docs */
-.cv {
-  display: flex;
-  justify-content: center;
-}
-.cv-docs {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-block-start: 0;
-  margin-block-end: 2rem;
-  padding-inline: 0;
-  gap: 3rem;
-}
 
-/* Site Badges */
-.site-badges {
+/* Footer lists */
+footer > div {
   display: flex;
   justify-content: center;
 }
-.list-badges {
+footer > div > ul {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
@@ -299,7 +283,7 @@ canvas{
   padding-inline: 0;
   gap: 3rem;
 }
-.list-badges li, .cv-docs li, .credits li {
+footer > div > ul > li {
   background-color: #ddd;
   padding: 0.5rem 0.5rem 0.5rem 0.25rem;
   border-radius: 0.5rem;
@@ -307,14 +291,15 @@ canvas{
   display: flex;
   align-items: center;
   text-transform: uppercase;
-  font-size: 1.75rem;
   line-height: 1rem;
   color: white;
 }
-.list-badges li a, .cv-docs li a, .list-credits a {
+footer > div > ul > li a {
   color: #333;
+  display: flex;
+  align-items: center;
 }
-li .icon {
+footer > div > ul >  li > a > svg {
   height: 0.75em; 
   /* ↓ Override the em value with `1cap` 
   where `cap` is supported */ 
@@ -323,24 +308,4 @@ li .icon {
   width: 1.5cap;
   margin-inline: 0.5rem;
   vertical-align: middle;
-}
-
-li a {
-  display: flex;
-  align-items: center;
-}
-/* Credits */
-.credits {
-  display: flex;
-  justify-content: center;
-}
-.list-credits {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-block-start: 0;
-  margin-block-end: 2rem;
-  padding-inline: 0;
-  gap: 1rem;
 }
