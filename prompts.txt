@@ -1,33 +1,61 @@
-Necesitamos centrar horizontalmente <ul class=""data-docs"> dentro de un contenedor <div> en CSS. Proporciona el código HTML y CSS necesario para lograr esto.
+Tengo este problema, quiero desplegar un icono al lado de un texto, el texto y el icono se encuentran dentro de un <li>. El problema reside que cuando envuelvo el texto y el icono con una etiqueta <a> para convertirlo en liga, la alineación del icono en svg cambia, ya no se centra como lo hace cuando no tiene la etiqueta <a>.
 
 
 #CSS
-/* Data Docs */
 .cv {
-  text-align: center;
+  display: flex;
+  justify-content: center;
 }
-.data-docs {
+.cv-docs {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   margin-block-start: 0;
   margin-block-end: 2rem;
   padding-inline: 0;
-  gap: 3rem;
+  gap: 2rem;
 }
-.data-docs li {
+.cv-docs li {
   background-color: #eee;
   padding: 0.5rem 1rem;
   border-radius: 1rem;
+  display: flex;
+  align-items: center;
+}
+li .icon {
+  height: 0.75em; 
+  /* ↓ Override the em value with `1cap` 
+  where `cap` is supported */ 
+  height: 1.5cap; 
+  width: 0.75em; 
+  width: 1.5cap;
+  margin-inline: 0.2em; 
 }
 
 #HTML 
 
-<div class="cv">
-    <ul class="data-docs">
-        <li><a href="">English Resume</a></li>
-        <li><a href="">Curriculum Español</a></li>
-        <li><a href="">English Certificate</a></li>
-        <li><a href="">Email Contact</a></li>
-    </ul>
-</div>
+<ul class="cv-docs">
+    <li>
+        <a href="">
+        <svg class="icon" viewBox="0 0 24 24" fill="red" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 
+                    2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09 
+                    C13.09 3.81 14.76 3 16.5 3 
+                    19.58 3 22 5.42 22 8.5 
+                    c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+        Resume</a>
+    </li>
+    <li>
+        <svg class="icon" viewBox="0 0 24 24" fill="red" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 
+                    2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09 
+                    C13.09 3.81 14.76 3 16.5 3 
+                    19.58 3 22 5.42 22 8.5 
+                    c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+        Curriculum</li>
+    <li><a href="">English Certificate</a></li>
+    <li><a href="">Contact</a></li>
+</ul>

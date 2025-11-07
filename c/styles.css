@@ -22,6 +22,7 @@ h1, h2, h3, h4, h5 {
 h1 { font-size: 4rem; }
 h2 { font-size: 3rem; margin-block-start: 8rem;}
 h3 { font-size: 2rem; }
+h4 { font-size: 2.5rem; margin-block: 8rem 4rem; text-align: center;}
 a {
   color: blue;
   text-decoration: none;
@@ -36,7 +37,7 @@ ul {
   font-size: 1.75rem;
 }
 .center {
-  background-image: url(../i/bg-grissd.png);
+  /* background-image: url(../i/bg-grid.png); */
   background-position: left top;
   max-width: 60ch; 
   margin: 0 auto;
@@ -106,73 +107,6 @@ canvas{
   display:block;
   width:100%;
   height:30rem;
-}
-
-/* Data Docs */
-.cv {
-  display: flex;
-  justify-content: center;
-}
-.data-docs {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-block-start: 0;
-  margin-block-end: 2rem;
-  padding-inline: 0;
-  gap: 2rem;
-}
-.data-docs li {
-  background-color: #eee;
-  padding: 0.5rem 1rem;
-  border-radius: 1rem;
-  display: flex;
-}
-
-.data-docs .resume::before {
-  content: '';
-  position: relative;
-  left: 0;
-  top: 0.4rem;
-  width: 2rem;
-  height: 2rem;
-  background-image: url('../i/icon-miro.svg');
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-.data-docs .curriculum::before {
-  content: '';
-  position: relative;
-  left: 0;
-  top: 0.4rem;
-  width: 2rem;
-  height: 2rem;
-  background-image: url('../i/icon-miro.svg');
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-.data-docs .eng-certificate::before {
-  content: '';
-  position: relative;
-  left: 0;
-  top: 0.4rem;
-  width: 2rem;
-  height: 2rem;
-  background-image: url('../i/icon-miro.svg');
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-.data-docs .mail-contact::before {
-  content: '';
-  position: relative;
-  left: 0;
-  top: 0.4rem;
-  width: 2rem;
-  height: 2rem;
-  background-image: url('../i/icon-miro.svg');
-  background-size: contain;
-  background-repeat: no-repeat;
 }
 
 /* Case Study */
@@ -332,4 +266,81 @@ canvas{
   color: white;
   cursor: pointer;
   font-weight: bold;
+}
+/* Footer lists */
+/* CV Docs */
+.cv {
+  display: flex;
+  justify-content: center;
+}
+.cv-docs {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-block-start: 0;
+  margin-block-end: 2rem;
+  padding-inline: 0;
+  gap: 3rem;
+}
+
+/* Site Badges */
+.site-badges {
+  display: flex;
+  justify-content: center;
+}
+.list-badges {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-block-start: 0;
+  margin-block-end: 2rem;
+  padding-inline: 0;
+  gap: 3rem;
+}
+.list-badges li, .cv-docs li, .credits li {
+  background-color: #ddd;
+  padding: 0.5rem 0.5rem 0.5rem 0.25rem;
+  border-radius: 0.5rem;
+  border: solid 0.05rem #ddd;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 1.75rem;
+  line-height: 1rem;
+  color: white;
+}
+.list-badges li a, .cv-docs li a, .list-credits a {
+  color: #333;
+}
+li .icon {
+  height: 0.75em; 
+  /* ↓ Override the em value with `1cap` 
+  where `cap` is supported */ 
+  height: 1.5cap; 
+  width: 0.75em; 
+  width: 1.5cap;
+  margin-inline: 0.5rem;
+  vertical-align: middle;
+}
+
+li a {
+  display: flex;
+  align-items: center;
+}
+/* Credits */
+.credits {
+  display: flex;
+  justify-content: center;
+}
+.list-credits {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-block-start: 0;
+  margin-block-end: 2rem;
+  padding-inline: 0;
+  gap: 1rem;
 }
