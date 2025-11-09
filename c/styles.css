@@ -269,6 +269,16 @@ canvas{
 }
 
 /* Footer lists */
+footer {
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: #333;
+  border-radius: 0.5rem;
+  border-top: solid 0.5rem #999;
+  border-bottom: solid 0.5rem #999;
+  padding: 0 4rem 8rem;
+}
 footer > div {
   display: flex;
   justify-content: center;
@@ -281,23 +291,32 @@ footer > div > ul {
   margin-block-start: 0;
   margin-block-end: 2rem;
   padding-inline: 0;
-  gap: 3rem;
+  gap: 2rem;
+  font-size: 1.5rem;
 }
 footer > div > ul > li {
-  background-color: #ddd;
+  background-color: #333;
   padding: 0.5rem 0.5rem 0.5rem 0.25rem;
   border-radius: 0.5rem;
   border: solid 0.05rem #ddd;
   display: flex;
   align-items: center;
-  text-transform: uppercase;
   line-height: 1rem;
   color: white;
 }
+footer > div > ul > li:hover {
+  background-color: #555;
+}
 footer > div > ul > li a {
-  color: #333;
+  color: white;
   display: flex;
   align-items: center;
+}
+footer > div > ul > li a:hover {
+  color: #fff;
+}
+footer > div > ul > li > a:visited {
+  color: #ccc;
 }
 footer > div > ul >  li > a > svg {
   height: 0.75em; 
@@ -308,4 +327,7 @@ footer > div > ul >  li > a > svg {
   width: 1.5cap;
   margin-inline: 0.5rem;
   vertical-align: middle;
+}
+footer > div > ul >  li.contact-me {
+  background-color: #006400;
 }
