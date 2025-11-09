@@ -1,61 +1,65 @@
-Tengo este problema, quiero desplegar un icono al lado de un texto, el texto y el icono se encuentran dentro de un <li>. El problema reside que cuando envuelvo el texto y el icono con una etiqueta <a> para convertirlo en liga, la alineación del icono en svg cambia, ya no se centra como lo hace cuando no tiene la etiqueta <a>.
+El centrado vertical de .stack parece funcionar en Edge de Microsoft si eliminamos esta clase de los CSS:
 
+.cover > :first-child:not(h1) {
+    /* Remove the top margin from the first child if it doesn't match the centered element */
+    margin-block-start: 0;
+}
 
 #CSS
-.cv {
-  display: flex;
-  justify-content: center;
+
+/* Cover formula */
+.cover {
+    --space: 1rem;
+    /* Establish a columnar flex context */
+    display: flex;
+    flex-direction: column;
+    /* Set a minimum height to match the viewport height */
+    min-block-size: 90vh;
+    /* Set a padding value */
+    padding: var(--space);
 }
-.cv-docs {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-block-start: 0;
-  margin-block-end: 2rem;
-  padding-inline: 0;
-  gap: 2rem;
+.cover > * {
+    /* Give each child a top and bottom margin */
+    margin-block: 1rem;
 }
-.cv-docs li {
-  background-color: #eee;
-  padding: 0.5rem 1rem;
-  border-radius: 1rem;
-  display: flex;
-  align-items: center;
+.cover > :first-child:not(.stack) {
+    /* Remove the top margin from the first child if it doesn't match the centered element */
+    margin-block-start: 0;
 }
-li .icon {
-  height: 0.75em; 
-  /* ↓ Override the em value with `1cap` 
-  where `cap` is supported */ 
-  height: 1.5cap; 
-  width: 0.75em; 
-  width: 1.5cap;
-  margin-inline: 0.2em; 
+.cover > :last-child:not(.stack) {
+    /* Remove the bottom margin from the last child if it doesn't match the centered element */
+    margin-block-end: 0;
+}
+.cover > .stack {
+    /* Center the centered element (h1 here) in the available vertical space */
+    margin-block: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-#HTML 
+/* Stack Formula */
+.stack { 
+  /* ↓ The flex context */ 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: flex-start;
+} 
+.stack > * { 
+  /* ↓ Any extant vertical margins are removed */ 
+  margin-block: 0; 
+}  
+.stack > * + * { 
+  /* ↓ Top margin is only applied to successive elements */ 
+  margin-block-start: var(--space, 1.5rem); 
+}
 
-<ul class="cv-docs">
-    <li>
-        <a href="">
-        <svg class="icon" viewBox="0 0 24 24" fill="red" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 
-                    2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09 
-                    C13.09 3.81 14.76 3 16.5 3 
-                    19.58 3 22 5.42 22 8.5 
-                    c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-        </svg>
-        Resume</a>
-    </li>
-    <li>
-        <svg class="icon" viewBox="0 0 24 24" fill="red" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 
-                    2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09 
-                    C13.09 3.81 14.76 3 16.5 3 
-                    19.58 3 22 5.42 22 8.5 
-                    c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-        </svg>
-        Curriculum</li>
-    <li><a href="">English Certificate</a></li>
-    <li><a href="">Contact</a></li>
-</ul>
+#HTML
+
+<header class="cover">
+  <div class="stack">
+      <h1>Xicoténcatl Trujano</h1>
+      <p>Web Designer | UX/UI | Frontend</p>
+  </div>
+  <p>I design intuitive, accessible interfaces with clean, standards-based code that honors web semantics.</p>
+</header>
