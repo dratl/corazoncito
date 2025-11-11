@@ -8,6 +8,7 @@ body {
   font-size: 2rem;
   line-height: 1.5;
   font-family: 'Courier New', Courier, monospace;
+  letter-spacing: 0.1rem;
   color: #333;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -18,20 +19,21 @@ h1, h2, h3, h4, h5 {
   font-family: Georgia, serif;
   margin-block-start: 1rem;
   margin-block-end: 1rem;
+  
 }
-h1 { font-size: 4rem; }
+h1 { font-size: 4rem; color: #cc0000; }
 h2 { font-size: 3rem; margin-block-start: 8rem; }
-h3 { font-size: 2rem; }
+h3 { font-size: 2rem; color: #cc0000;}
 h4 { font-size: 2.5rem; margin-block: 8rem 4rem; text-align: center;}
 a {
-  color: blue;
+  color: #3030ff;
   text-decoration: none;
 }
 a:hover {
-  color: #aa0000;
+  color: #B60000;
 }
 a:visited {
-  color: purple;
+  color: #990099;
 }
 ul {
   font-size: 1.75rem;
@@ -118,8 +120,8 @@ header {
 /* The Grid Formula */
 .grid {
   display: grid;
-  grid-gap: 1rem;
-  --minimum: 19ch;
+  grid-gap: 3rem;
+  --minimum: 18ch;
 }
 @supports (width: min(var(--minimum), 100%)) {
   .grid {
@@ -204,12 +206,13 @@ canvas{
   gap: 3rem;
 }
 .list-code-canvas li {
-  background-color: #eee;
+  border: solid 0.1rem #ccc;
   padding: 0.5rem 1rem;
   border-radius: 1rem;
 }
 .list-code-canvas li:hover {
-  background-color: #ddd;
+  background-color: #f5f5f5;
+  border: solid 0.1rem #f5f5f5; 
 }
 
 /* The Graphics grid *
@@ -266,16 +269,16 @@ canvas{
 }
 .card h3 {
   margin-block: 0;
-  padding: 0.5rem 1rem;
-
+  padding: 1rem 1rem 0;
   text-transform: uppercase;
   font-weight: 400;
+  color: #cc0000;
 }
 .card p {
-  padding: 1rem 1rem;
-  background-color: #f6f6f6;
+  padding: 0 1rem 1rem;
   margin-block: 0;
-  line-height: 1;
+  line-height: 1.5;
+  border-bottom: 0.2rem dashed #ccc;
 }
 
 /* Popup */
@@ -377,6 +380,9 @@ footer > div > ul >  li > a > svg {
   vertical-align:baseline;
 }
 footer > div > ul >  li.contact-me {
+  background-color: #004400;
+}
+footer > div > ul >  li:hover.contact-me {
   background-color: #006400;
 }
 
