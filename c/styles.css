@@ -22,7 +22,7 @@ h1, h2, h3, h4, h5 {
 h1 { font-size: 4rem; }
 h2 { font-size: 3rem; margin-block-start: 8rem; }
 h3 { font-size: 2rem; }
-h4 { font-size: 2.5rem; margin-block: 8rem 4rem; text-align: center; }
+h4 { font-size: 2.5rem; margin-block: 8rem 4rem; text-align: center;}
 a {
   color: blue;
   text-decoration: none;
@@ -199,7 +199,7 @@ canvas{
   display: flex;
   flex-wrap: wrap;
   margin-block-start: 0;
-  margin-block-end: 2rem;
+  margin-block-end: 6rem;
   padding-inline: 0;
   gap: 3rem;
 }
@@ -263,6 +263,19 @@ canvas{
 }
 .card:hover .responsive-image::before {
   opacity: 1;
+}
+.card h3 {
+  margin-block: 0;
+  padding: 0.5rem 1rem;
+
+  text-transform: uppercase;
+  font-weight: 400;
+}
+.card p {
+  padding: 1rem 1rem;
+  background-color: #f6f6f6;
+  margin-block: 0;
+  line-height: 1;
 }
 
 /* Popup */
@@ -331,7 +344,7 @@ footer > div > ul {
 }
 footer > div > ul > li {
   background-color: #333;
-  padding: 0.5rem 0.5rem 0.5rem 0.25rem;
+  padding: 1rem;
   border-radius: 0.5rem;
   border: solid 0.05rem #ddd;
   display: flex;
@@ -361,8 +374,19 @@ footer > div > ul >  li > a > svg {
   width: 0.75em; 
   width: 1.5cap;
   margin-inline: 0.5rem;
-  vertical-align: middle;
+  vertical-align:baseline;
 }
 footer > div > ul >  li.contact-me {
   background-color: #006400;
+}
+
+/* Testing site */
+
+footer {
+  background: repeating-linear-gradient(
+    35deg,
+    hsl(0, 0%, 20%) 0px 2px,
+    hsl(0, 0%, 25%) 0px 4px
+  );
+  mix-blend-mode: multiply;
 }
