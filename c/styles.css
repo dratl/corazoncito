@@ -24,7 +24,7 @@ h1, h2, h3, h4, h5 {
 h1 { font-size: 4rem; color: #cc0000; }
 h2 { font-size: 3rem; margin-block-start: 8rem; }
 h3 { font-size: 2rem; color: #cc0000;}
-h4 { font-size: 2.5rem; margin-block: 8rem 4rem; text-align: center;}
+h4 { font-size: 2.5rem; margin-block: 8rem 4rem; }
 a {
   color: #3030ff;
   text-decoration: none;
@@ -85,7 +85,7 @@ header {
 .with-sidebar {
   display: flex;
   flex-wrap: wrap;
-  gap: 4rem;
+  gap: 2rem;
 }
 .with-sidebar > :first-child {
   /* sidebar: ancho fijo, pero puede crecer si hay espacio */
@@ -278,7 +278,7 @@ canvas{
   padding: 0 1rem 1rem;
   margin-block: 0;
   line-height: 1.5;
-  border-bottom: 0.2rem dashed #ccc;
+  border-bottom: 0.1rem dashed #ccc;
 }
 
 /* Popup */
@@ -330,6 +330,9 @@ footer {
   padding: 0 4rem 8rem;
   margin-block-start: 8rem;
 }
+footer h4, footer h5 {
+  font-weight: 400;
+}
 footer > div {
   display: flex;
   justify-content: center;
@@ -370,12 +373,12 @@ footer > div > ul > li > a:visited {
   color: #ccc;
 }
 footer > div > ul >  li > a > svg {
-  height: 0.75em; 
+  height: 1em; 
   /* ↓ Override the em value with `1cap` 
   where `cap` is supported */ 
-  height: 1.5cap; 
-  width: 0.75em; 
-  width: 1.5cap;
+  height: 2cap; 
+  width: 1em; 
+  width: 2cap;
   margin-inline: 0.5rem;
   vertical-align:baseline;
 }

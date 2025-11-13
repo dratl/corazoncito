@@ -52,6 +52,7 @@
           datasets: [{
             data: scores,
             backgroundColor: scores.map(() => '#ffffff'),
+            hoverBackgroundColor:scores.map(() => '#FF9999'),
             borderColor: scores.map(() => '#000000'),
             borderWidth: 1,
             borderRadius: 6,
@@ -80,7 +81,7 @@
                   }
                   return String(value);
                 },
-                color: '#00',
+                color: '#c00',
                 font: { family: 'monospace' }
               },
               border: { display: false },
@@ -129,9 +130,9 @@
                   const idx = ctx.dataIndex;
                   const lvl = levels[idx];
                   const map = {
-                    'Advanced': '#33FF33',
-                    'Intermediate': '#00CC00',
-                    'Beginner': '#006600'
+                    'Advanced': '#00C400',
+                    'Intermediate': '#009400',
+                    'Beginner': '#006400'
                   };
                   const bg = map[lvl] || '#000';
                   return { borderColor: '#000', backgroundColor: bg };
