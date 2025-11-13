@@ -39,7 +39,7 @@ ul {
   font-size: 1.75rem;
 }
 .center {
-  /* background-image: url(../i/bg-grid.png); */
+  /*background-image: url(../i/bg-grid.png);*/
   background-position: left top;
   max-width: 60ch; 
   margin: 0 auto;
