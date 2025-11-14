@@ -8,14 +8,14 @@
 </head>
 <body>
     <div class="center">
-        <header class="cover" role="banner">
+        <header class="cover">
             <div class="stack">
                 <h1>Xicoténcatl Trujano</h1>
                 <p>Web Designer | UX/UI | Frontend</p>
             </div>
             <p>I design intuitive, accessible interfaces with clean, standards-based code that honors web semantics.</p>
         </header>
-        <main id="main" role="main" tabindex="-1">
+        <main id="main">
             <section>
                 <h2 id="skills">The Skills</h2>
                 <div class="chart-wrap">
@@ -87,17 +87,15 @@
             <div class="grid">
                 <div class="card pixel-art stack"
                     data-full="i/portfolio/01-pixel-band.png"
-                    data-hover="i/portfolio/thumbs/01-pixel-band.png">
-                    <button type="button" 
-                    class="image-link" 
-                    aria-label="View full-size image of Los Mongas poster design"
-                    data-full="i/portfolio/01-pixel-band.png">
+                    data-hover="i/portfolio/thumbs/01-pixel-band.png"
+                    role="button"
+                    tabindex="0"
+                    aria-label="View full-size image of Los Mongas poster design">
                         <div class="responsive-image">
                             <img src="i/image-placeholder.svg" 
                             alt="" 
                             loading="lazy">
                         </div>
-                    </button>
                     <h3>Los Mongas</h3>
                     <p>Poster Design.</p>
                 </div>
@@ -196,7 +194,7 @@
                 <img src="#" alt="" class="popup-image" id="popup-img">
             </div>
         </main>
-        <footer role="contentinfo">
+        <footer>
             <h4 id="contact">The Footer</h4>
             <div>
                 <ul>
