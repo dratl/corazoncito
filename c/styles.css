@@ -425,6 +425,5 @@ footer {
   border-left: none;
   quotes: "“" "”";
 }
-.grok-quote p::before { content: open-quote; }
-.grok-quote p::after  { content: close-quote; }
+
 .grok-quote cite { font-weight: bold; }
