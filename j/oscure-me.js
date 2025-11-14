@@ -1,4 +1,8 @@
 // Este script construye dinámicamente una dirección de correo electrónico
+document.addEventListener('DOMContentLoaded', () => {
+  const link = document.getElementById("email-link");
+  if (link) link.setAttribute("rel", "noopener");
+});
 // para evitar que sea fácilmente detectada por bots de spam.
   // Definimos las partes del correo
   const user = "xico.trujano";
