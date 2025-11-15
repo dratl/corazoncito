@@ -24,7 +24,7 @@ h1, h2, h3, h4, h5 {
   
 }
 h1 { font-size: 4rem; color: #cc0000; }
-h2 { font-size: 3.5rem; font-weight: 400; margin-block-start: 8rem; }
+h2 { font-size: 4rem; font-weight: 400; margin-block-start: 8rem; }
 h3 { font-size: 2rem; font-weight: 400; color: #cc0000;}
 h4 { font-size: 2.5rem; margin-block: 8rem 4rem; }
 a {
@@ -399,7 +399,7 @@ footer > div > ul >  li:hover.contact-me {
 
 /* Testing snips */
 
-footer {
+footer { /* textured pattern */
   background: repeating-linear-gradient(
     35deg,
     hsl(0, 0%, 20%) 0px 2px,
@@ -407,7 +407,8 @@ footer {
   );
   mix-blend-mode: multiply;
 }
-.visually-hidden {
+
+.visually-hidden { /* Only for text recognition */
     position: absolute;
     width: 1px;
     height: 1px;
@@ -418,6 +419,7 @@ footer {
     white-space: nowrap;
     border: 0;
 }
+
 .grok-quote {
   max-width: 50rem;
   margin: 4rem auto 2rem;
@@ -428,5 +430,17 @@ footer {
   border-left: none;
   quotes: "“" "”";
 }
-
 .grok-quote cite { font-weight: bold; }
+
+::selection { /* Todos los navegadores */
+  background-color: #FFDEAD;
+  color: #000;
+}
+::-moz-selection { /* Firefox */
+  background: #FFDEAD;
+  color: #000;
+}
+::-webkit-selection { /* Safari/Chrome antiguos */
+  background: #FFDEAD;
+  color: #000;
+}
