@@ -1,0 +1,19 @@
+footer, blockquote {
+  display: none;
+}
+
+body {
+  font-size: 1.5rem;
+}
+
+.with-sidebar > :first-child {
+  flex-basis: 20rem;
+}
+
+.profile-picture {
+  max-width: 15rem;
+}
+
+ul.tags li {
+  font-size: 1.3rem;
+}

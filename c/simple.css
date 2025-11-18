@@ -1,0 +1,289 @@
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  font-size: 1.65rem;
+  line-height: 1.5;
+  font-family: 'Courier New', Courier, monospace;
+  letter-spacing: 0.1rem;
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  margin-block: 0;
+  margin-inline: 1rem;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: Georgia, serif;
+  margin-block-start: 1rem;
+  margin-block-end: 1rem;
+  
+}
+h1 { font-size: 4rem; color: #cc0000; }
+h2 { font-size: 3rem; font-weight: 400; color: #cc0000; }
+h3 { font-size: 2rem; font-weight: 400; }
+h4 { font-size: 2.5rem; margin-block: 8rem 4rem; }
+a {
+  color: #3030ff;
+  text-decoration: none;
+}
+a:hover {
+  color: #B60000;
+}
+a:visited {
+  color: #990099;
+}
+.center {
+  /*background-image: url(../i/bg-grid.png);*/
+  background-position: left top;
+  max-width: 94ch; 
+  margin: 0 auto;
+}
+header {
+  margin-block-end: 4rem;
+}
+/* CSS Formulas */
+
+/* Cover formula */
+.cover {
+    /* Establish a columnar flex context */
+    display: flex;
+    flex-direction: column;
+    /* Set a minimum height to match the viewport height */
+    min-block-size: 90vh;
+    /* Set a padding value */
+    padding: 0;
+}
+.cover > * {
+    /* Give each child a top and bottom margin */
+    margin-block: 1rem;
+}
+.cover > :first-child:not(.stack) {
+    /* Remove the top margin from the first child if it doesn't match the centered element */
+    margin-block-start: 0;
+}
+.cover > :last-child:not(.stack) {
+    /* Remove the bottom margin from the last child if it doesn't match the centered element */
+    margin-block-end: 0;
+}
+.cover > .stack {
+    /* Center the centered element (h1 here) in the available vertical space */
+    margin-block: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Sidebar Formula */
+.with-sidebar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+}
+.with-sidebar > :first-child {
+  /* sidebar: ancho fijo, pero puede crecer si hay espacio */
+  flex-basis: 30rem;  /* al gusto */
+  flex-grow: 1;
+  /*justify-items: center;
+  align-items: center;  Comentamos para alinear la lista a top left */
+}
+.with-sidebar > :last-child {
+  /* content principal: crece mucho más */
+  flex-basis: 0;
+  flex-grow: 999;
+  min-inline-size: 50%;
+}
+
+/* Stack Formula */
+.stack { 
+  /* ↓ The flex context */ 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: flex-start;
+} 
+.stack > * { 
+  /* ↓ Any extant vertical margins are removed */ 
+  margin-block: 0; 
+}  
+.stack > * + * { 
+  /* ↓ Top margin is only applied to successive elements */ 
+  margin-block-start: var(--space, 1.5rem); 
+}
+
+/* The Grid Formula */
+.grid {
+  display: grid;
+  grid-gap: 3rem;
+  --minimum: 18ch;
+}
+@supports (width: min(var(--minimum), 100%)) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(var(--minimum), 100%), 1fr));
+  }
+}
+
+/* Custom Styles in minimal mode */
+
+.profile-picture {
+  border-radius: 50%;
+  border: solid 0.3rem #ccc;
+  max-width: 20rem;
+  height: auto;
+  display: block;
+  margin-block-start: 1rem;
+  margin-block-end: 1rem;
+}
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ul li {
+  padding-bottom: 1rem;
+}
+ul.tags {
+  list-style: none;
+  padding-inline-start: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-block-start: 2rem;
+  margin-block-end: 2rem;
+}
+ul.tags li {
+  background-color: #eee;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: solid 0.05rem #ccc;
+  font-size: 1.5rem;
+}
+ul.contact li {
+  padding-bottom: 0.5rem;
+}
+
+
+/* Footer lists */
+footer {
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: #333;
+  border-radius: 0.5rem;
+  border-top: solid 0.5rem #999;
+  border-bottom: solid 0.5rem #999;
+  padding: 0 4rem 7rem;
+  margin-block-start: 8rem;
+}
+footer h2, footer h3 {
+  color: white;
+  font-weight: 400;
+}
+footer h2 { font-size: 2rem; margin-block-start: 8rem; margin-block-end: 3rem;}
+footer h3 { font-size: 1.5rem; margin-block-start: 4rem; margin-block-end: 3rem;}
+footer > div {
+  display: flex;
+  justify-content: center;
+}
+footer > div > ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-block-start: 0;
+  margin-block-end: 2rem;
+  padding-inline: 0;
+  gap: 2rem;
+  font-size: 1.5rem;
+}
+footer > div > ul > li {
+  background-color: #333;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: solid 0.05rem #ddd;
+  display: flex;
+  align-items: center;
+  line-height: 1rem;
+  color: white;
+}
+footer > div > ul > li:hover {
+  background-color: #555;
+}
+footer > div > ul > li a {
+  color: white;
+  display: flex;
+  align-items: center;
+}
+footer > div > ul > li a:hover {
+  color: #fff;
+}
+footer > div > ul > li > a:visited {
+  color: #ccc;
+}
+footer > div > ul >  li > a > svg {
+  height: 1em; 
+  /* ↓ Override the em value with `1cap` 
+  where `cap` is supported */ 
+  height: 2cap; 
+  width: 1em; 
+  width: 2cap;
+  margin-inline: 0.5rem;
+  vertical-align:baseline;
+}
+footer > div > ul >  li.contact-me {
+  background-color: #004400;
+}
+footer > div > ul >  li:hover.contact-me {
+  background-color: #006400;
+}
+
+/* Testing snips */
+
+footer { /* textured pattern */
+  background: repeating-linear-gradient(
+    35deg,
+    hsl(0, 0%, 20%) 0px 2px,
+    hsl(0, 0%, 25%) 0px 4px
+  );
+  mix-blend-mode: multiply;
+}
+
+.visually-hidden { /* Only for text recognition */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+}
+
+.grok-quote {
+  max-width: 50rem;
+  margin: 4rem auto 2rem;
+  padding: 2rem;
+  font-size: 1.5rem;
+  font-style: italic;
+  text-align: center;
+  border-left: none;
+  quotes: "“" "”";
+}
+.grok-quote cite { font-weight: bold; }
+
+::selection { /* Todos los navegadores */
+  background-color: #FFDEAD;
+  color: #000;
+}
+::-moz-selection { /* Firefox */
+  background: #FFDEAD;
+  color: #000;
+}
+::-webkit-selection { /* Safari/Chrome antiguos */
+  background: #FFDEAD;
+  color: #000;
+}

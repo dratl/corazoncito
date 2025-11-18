@@ -14,4 +14,4 @@ document.addEventListener('DOMContentLoaded', () => {
   link.href = "mailto:" + email;
 
   // Insertamos el texto visible
-  document.getElementById("email-text").textContent = user;
+  document.getElementById("email-text").textContent = email;
