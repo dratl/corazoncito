@@ -52,7 +52,7 @@
           datasets: [{
             data: scores,
             backgroundColor: scores.map(() => '#ffffff'),
-            hoverBackgroundColor:scores.map(() => '#FF9999'),
+            hoverBackgroundColor:scores.map(() => '#FFDEAD'),
             borderColor: scores.map(() => '#000000'),
             borderWidth: 1,
             borderRadius: 6,
