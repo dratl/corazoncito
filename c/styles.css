@@ -245,7 +245,7 @@ canvas{
   width: 100%;
   height: auto;
   border-radius: 1rem;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.6s ease;
 }
 /* Imagen real (fondo) */
 .card .responsive-image::before {
