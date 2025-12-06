@@ -119,7 +119,7 @@ button {
 }  
 .stack > * + * { 
   /* ↓ Top margin is only applied to successive elements */ 
-  margin-block-start: var(--space, 1.5rem); 
+  margin-block-start: 1.5rem; 
 }
 
 /* The Grid Formula */
@@ -409,15 +409,15 @@ footer { /* textured pattern */
 }
 
 .visually-hidden { /* Only for text recognition */
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip-path: inset(50%);
-    white-space: nowrap;
-    border: 0;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
 }
 
 .grok-quote {
